@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cursor</title>
+    <style>
+        body {
+    cursor: none;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+    const cursor = document.querySelector('.custom-cursor');
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+    </script>
+</body>
+</html>
